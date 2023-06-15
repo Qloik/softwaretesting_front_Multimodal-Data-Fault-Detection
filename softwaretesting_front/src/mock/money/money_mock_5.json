@@ -1,0 +1,13 @@
+[
+  {"id":"TS1","sales":-10,"days":-9,"money":-10,"expectation":"-1"},
+  {"id":"TS2","sales":-10,"days":-9,"money":10,"expectation":"-1"},
+  {"id":"TS3","sales":-10,"days":11,"money":-10,"expectation":"-1"},
+  {"id":"TS4","sales":-10,"days":11,"money":10,"expectation":"-1"},
+  {"id":"TS5","sales":100,"days":-9,"money":-10,"expectation":"-1"},
+  {"id":"TS6","sales":100,"days":-9,"money":10,"expectation":"-1"},
+  {"id":"TS7","sales":100,"days":11,"money":-10,"expectation":"-1"},
+  {"id":"TS8","sales":300,"days":7,"money":50,"expectation":"0"},
+  {"id":"TS9","sales":300,"days":11,"money":60,"expectation":"6"},
+  {"id":"TS10","sales":100,"days":7,"money":75,"expectation":"6"},
+  {"id":"TS11","sales":100,"days":11,"money":95,"expectation":"5"}
+]

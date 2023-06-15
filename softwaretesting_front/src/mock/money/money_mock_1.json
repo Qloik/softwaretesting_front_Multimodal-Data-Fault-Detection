@@ -1,0 +1,6 @@
+[
+  {"id":"TS1","sales":300,"days":7,"money":60,"expectation":"7"},
+  {"id":"TS2","sales":300,"days":7,"money":50,"expectation":"0"},
+  {"id":"TS3","sales":100,"days":7,"money":95,"expectation":"5"},
+  {"id":"TS4","sales":100,"days":7,"money":75,"expectation":"6"}
+]

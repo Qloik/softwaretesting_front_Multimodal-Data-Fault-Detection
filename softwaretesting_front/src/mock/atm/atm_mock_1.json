@@ -1,0 +1,12 @@
+[
+  {"id":"TS1", "action":"插入银行卡 输入密码正确 结束操作 取卡", "expectation":"非工作"},
+  {"id":"TS2", "action":"插入银行卡 输入密码正确 取钱(小于等于余额) 返回主界面", "expectation":"主界面"},
+  {"id":"TS3", "action":"插入银行卡 输入密码正确 取钱(大于余额) 返回主界面", "expectation":"主界面"},
+  {"id":"TS4", "action":"插入银行卡 输入密码错误 输入密码正确", "expectation":"主界面"},
+  {"id":"TS5", "action":"插入银行卡 输入密码错误 输入密码错误 输入密码正确", "expectation":"主界面"},
+  {"id":"TS6", "action":"插入银行卡 输入密码错误 输入密码错误 输入密码错误", "expectation":"吞卡"},
+  {"id":"TS7", "action":"插入银行卡 输入密码错误 输入密码错误 超过两分钟未操作", "expectation":"吞卡"},
+  {"id":"TS8", "action":"插入银行卡 输入密码错误 超过两分钟未操作", "expectation":"吞卡"},
+  {"id":"TS9", "action":"插入银行卡 超过两分钟未操作", "expectation":"吞卡"}
+
+]
