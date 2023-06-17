@@ -10,7 +10,7 @@
       <HeadBar @changeCollapse="changeCollapse"/>
       <el-main style="height:100px;" class="main"><router-view /></el-main>
       <el-footer style="height:20px;font-size:12px;text-align:center;">
-        软件测试第39组练习可视化平台 @Copyright SSE 2022 赵翀 李航宇 胡启云</el-footer>
+        软件测试第xx组练习可视化平台 @Copyright SSE 2023 龙卓涵 傅薏帆 王杨乐 </el-footer>
     </el-container>
   </el-container>
 </template>

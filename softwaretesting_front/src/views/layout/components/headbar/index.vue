@@ -1,8 +1,8 @@
 <template>
   <el-header class="header">
-    <div>
+    <div >
       <i class="el-icon-s-fold" @click="changeCollapse"></i>
-      <span>第39组课程练习平台</span>
+      <span>第xx组课程练习平台</span>
     </div>
 
     <el-dropdown>
@@ -13,7 +13,7 @@
           :size="40"
           class="avatar"
         ></el-avatar>
-        <span>欢迎来到软件测试课程练习平台!</span>
+        <span class="header">欢迎来到软件测试课程练习平台!</span>
       </div>
       <el-dropdown-menu slot="dropdown">
         <el-dropdown-item @click.native="onLogout">退出登录</el-dropdown-item>
@@ -65,10 +65,18 @@ export default {
 
 <style scoped lang="less">
 .header {
+  background-color: #1a202c;
+  color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
 .avatar-bar {
   display: flex;
   justify-content: center;

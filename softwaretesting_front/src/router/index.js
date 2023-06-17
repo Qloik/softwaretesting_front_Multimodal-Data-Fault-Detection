@@ -18,6 +18,7 @@ import sixteen from '@/views/sixteen/'
 import sale from '@/views/sale/'
 import Atm from '@/views/atm/'
 import six from "@/views/six"
+import lab from "@/views/lab"
 Vue.use(VueRouter)
 
 const routes = [{
@@ -51,6 +52,11 @@ const routes = [{
         path: '/sales',
         name: 'sales',
         component: Sales
+      },
+      {
+        path: '/lab',
+        name: 'lab',
+        component: lab
       },
       {
         path: '/three',
