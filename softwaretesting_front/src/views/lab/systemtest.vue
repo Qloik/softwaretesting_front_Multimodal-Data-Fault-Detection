@@ -46,39 +46,79 @@
           width="120"
           align="center"
         ></el-table-column>
-        <el-table-column
-          prop="year"
-          label="年份"
-          width="120"
-          align="center"
-        ></el-table-column>
-        <el-table-column
-          prop="month"
-          width="120"
-          label="月份"
-          align="center"
-        ></el-table-column>
-        <el-table-column
-          prop="day"
-          width="120"
-          label="天"
-          align="center"
-        ></el-table-column>
-        <el-table-column
-          prop="expectation"
-          label="预期输出"
-          align="center"
-        ></el-table-column>
-        <el-table-column
+        <el-table-column label="输入数据" align="center">
+          <el-table-column
+            prop="model"
+            label="model"
+            width="120"
+            align="center"
+          ></el-table-column>
+          <el-table-column
+            prop="train"
+            width="120"
+            label="train"
+            align="center"
+          ></el-table-column>
+          <el-table-column
+            prop="test"
+            width="120"
+            label="test"
+            align="center"
+          ></el-table-column>
+        </el-table-column>
+
+        <!-- ??? -->
+        <el-table-column label="预期输出" align="center">
+          <!-- <el-table-column
           prop="actual"
           label="实际输出"
           align="center"
-        ></el-table-column>
+        ></el-table-column> -->
+          <el-table-column
+            prop="precision"
+            label="precision"
+            align="center"
+          ></el-table-column>
+          <el-table-column
+            prop="recall"
+            label="recall"
+            align="center"
+          ></el-table-column>
+          <el-table-column
+            prop="f1-score"
+            label="f1-score"
+            align="center"
+          ></el-table-column>
+        </el-table-column>
+         <el-table-column label="实际输出" align="center">
+          <!-- <el-table-column
+          prop="actual"
+          label="实际输出"
+          align="center"
+        ></el-table-column> -->
+          <el-table-column
+            prop="precision_real"
+            label="precision"
+            align="center"
+          ></el-table-column>
+          <el-table-column
+            prop="recall_real"
+            label="recall"
+            align="center"
+          ></el-table-column>
+          <el-table-column
+            prop="f1-score_real"
+            label="f1-score"
+            align="center"
+          ></el-table-column>
+        </el-table-column>
+
         <el-table-column
           prop="info"
           label="程序运行信息"
           align="center"
         ></el-table-column>
+
         <el-table-column prop="state" label="测试结果" align="center">
           <template slot-scope="scope">
             <div v-if="scope.row.state == true" class="icon-svg">
@@ -100,10 +140,10 @@
 </template>
 
 <script>
-import mock_1_json from "@/mock/calendar/calendar_mock_1.json";
-import mock_2_json from "@/mock/calendar/calendar_mock_2.json";
-import mock_3_json from "@/mock/calendar/calendar_mock_3.json";
-import { testcalendar } from "@/api/calendartest.js";
+import mock_1_json from "@/mock/lab/lab_mock_1.json";
+import mock_2_json from "@/mock/lab/lab_mock_2.json";
+// import mock_3_json from "@/mock/lab/lab_mock_3.json";
+// import { testlab } from "@/api/labtest.js";
 export default {
   name: "SystemTest",
   components: {},
@@ -122,9 +162,9 @@ export default {
     };
   },
   computed: {
-    tableHeight(){
-      return (this.parentHeight - 260) > 650 ? 650 : (this.parentHeight - 260);
-    }
+    tableHeight() {
+      return this.parentHeight - 260 > 650 ? 650 : this.parentHeight - 260;
+    },
   },
   watch: {
     value: {
@@ -160,21 +200,20 @@ export default {
       let newData = {};
       if (this.value === "1") {
         newData = {
-          calendar_test_list: mock_1_json,
+          lab_test_list: mock_1_json,
         };
-      } else if(this.value === "2") {
+      } else if (this.value === "2") {
         newData = {
-          calendar_test_list: mock_2_json,
+          lab_test_list: mock_2_json,
         };
-      }
-      else {
+      } else {
         newData = {
-          calendar_test_list: mock_3_json,
+          lab_test_list: mock_3_json,
         };
       }
       const _this = this;
       this.loading = true;
-      mock_1_json(newData)
+      testlab(newData)
         .then((res) => {
           _this.tableData.forEach((item, index) => {
             let responseObject = res.data.test_result[index];
@@ -226,13 +265,13 @@ export default {
   width: 200px;
   margin-top: 10px;
 }
-.main-header{
+.main-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom:20px;
+  margin-bottom: 20px;
 }
-.main-table{
+.main-table {
   height: 100%;
   display: flex;
   align-items: center;

@@ -1,99 +1,66 @@
 <template>
-  <div>
+  <div style="height: 100%" ref="tabs">
     <el-card shadow="hover">
-      <el-tabs v-model="activeName" @tab-click="handleClick">
-
-        <el-tab-pane label="问题描述" name="first">
-          <labQuestion />
+      <el-tabs v-model="activeName">
+        <el-tab-pane label="问题描述与分析" name="first">
+          <CalendarQuestion />
         </el-tab-pane>
+
+        <el-tab-pane label="测试用例输入" name="second">
+          <SystemTest :parentHeight="parentHeight" />
+        </el-tab-pane>
+
+        <el-tab-pane label="单测试用例输入" name="third">
+          <SingleCase />
+        </el-tab-pane>
+<!-- 
+        <el-tab-pane label="测试用例文件输入" name="fourth">
+          <ExcelFile />
+        </el-tab-pane> -->
 
       </el-tabs>
     </el-card>
-
   </div>
 </template>
 
 <script>
+import CalendarQuestion from "./question";
+import SystemTest from "./systemtest";
+import SingleCase from "./singlecase";
+// import ExcelFile from "./excelfile";
+// import BugRecord from "./bug";
 
-import labQuestion from "./labcontent";
 export default {
-  name: "four",
-  components: { labQuestion },
+  name: "lab",
+  components: {
+    CalendarQuestion,
+    SystemTest,
+    SingleCase,
+    // ExcelFile,
+    // BugRecord
+  },
   props: {},
   data() {
     return {
-      options: [
-      ],
-      value: "选项1",
-      tableData: [],
-      loading: false,
-      classState: [],
-      stateflag: false,
       activeName: "first",
-      isFirst:true,
-      labelPosition: 'right',
-        formLabelAlign: {
-          name: '',
-          region: '',
-          type: ''
-        }
+      parentHeight: 3333,
     };
   },
   computed: {},
   watch: {},
-  created() {},
-  mounted() {
-    
-
+  created() {
+    window.addEventListener("resize", this.getHeight);
   },
+  mounted() {},
   methods: {
-    
+    getHeight() {
+      try {
+        this.parentHeight = this.$refs.tabs.offsetHeight;
+      } catch (err) {}
+    },
   },
 };
-
-
-
-
-
 </script>
 
-
-
-
 <style scoped lang="less">
-/deep/ .el-table .error-row {
-  background: #fff0f0;
-}
-/deep/ .el-table .success-row {
-  background-color: #f7fff9;
-}
-.item {
-  margin-bottom: 10px;
-}
-.clearfix:before,
-.clearfix:after {
-  display: table;
-  content: "";
-}
-.clearfix:after {
-  clear: both;
-}
-.main-form {
-  margin-top: 10px;
-}
-.main-button {
-  width: 100%;
-  margin-top: 10px;
-}
-.box-card {
-  padding: 0;
-}
-.single-form{
-  width:600px;
-  top:50%;
-  left:50%;
-}
-.block{
-
-}
 </style>
