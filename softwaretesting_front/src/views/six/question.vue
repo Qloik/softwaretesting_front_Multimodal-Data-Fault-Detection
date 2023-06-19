@@ -9,11 +9,12 @@
 
   <h3 style="margin-top:100px">一. 问题分析</h3>
   <p>项目用例图</p>
-  <img src="./usecase_1.png" style="width:100%"/>
+  <img src="./usecase_1.jpg" style="width:100%"/>
   <h3 style="margin-top:50px;">二. 边界值分析</h3>
-  <p>对于完成一场约球获取积分的数量，我们会根据不同输入的边界值进行判断，包括参与的场次，是否是公开约球，信誉度等进行不同的输入测试</p>
+  <p>对于IFPUG方法功能点估算，我们会根据不同输入的边界值进行判断，包括功能点数量、功能点类型、功能点复杂度，等进行不同的输入测试</p>
+  <img src="./tabel.png" style="width:100%">
 <h3 style="margin-top:50px;">三. 测试用例</h3>
-<img src="./test.jpg" style="width:100%">
+<img src="./test_case.png" style="width:100%">
 
     </div>
 
