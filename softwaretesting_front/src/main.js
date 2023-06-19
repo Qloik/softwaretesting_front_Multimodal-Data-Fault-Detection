@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import 'default-passive-events'
+import mock from './mock.js';
 
 //加载Element组件库
 import ElementUI from 'element-ui';

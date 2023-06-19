@@ -1,21 +1,6 @@
 [
-  {"id":"TS1","model":2022,"train":6,"test":6,"expectation":"-","precision":"0.9997","recall":"0.9745","f1-score":"0.9870","info":"","state":true,"time":"1.512s"},
-  {"id":"TS2","model":1899,"train":6,"test":6,"expectation":"-","precision":"0.9997","recall":"0.9745","f1-score":"0.9870","info":"","state":true,"time":"1.512s"},
-  {"id":"TS3","model":1900,"train":6,"test":6,"expectation":"-","precision":"0.9997","recall":"0.9745","f1-score":"0.9870","info":"","state":"测试通过","time":"1.512s"},
-  {"id":"TS4","model":1901,"train":6,"test":6,"expectation":"-","precision":"0.9997","recall":"0.9745","f1-score":"0.9870","info":"","state":"测试通过","time":"1.512s"},
-  {"id":"TS5","model":2099,"train":6,"test":6,"expectation":"-","precision":"0.9997","recall":"0.9745","f1-score":"0.9870","info":"","state":"测试通过","time":"1.512s"},
-  {"id":"TS6","model":2100,"train":6,"test":6,"expectation":"-","precision":"0.9997","recall":"0.9745","f1-score":"0.9870","info":"","state":"测试通过","time":"1.512s"},
-  {"id":"TS7","model":2101,"train":6,"test":6,"expectation":"-","precision":"0.9997","recall":"0.9745","f1-score":"0.9870","info":"","state":"测试通过","time":"1.512s"},
-  {"id":"TS8","model":2022,"train":0,"test":0,"expectation":"-","precision":"0.9997","recall":"0.9745","f1-score":"0.9870","info":"","state":"测试通过","time":"1.512s"},
-  {"id":"TS9","model":2022,"train":1,"test":1,"expectation":"-","precision":"0.9997","recall":"0.9745","f1-score":"0.9870","info":"","state":"测试通过","time":"1.512s"},
-  {"id":"TS10","model":2022,"train":2, "test":6,"expectation":"-","precision":"0.9997","recall":"0.9745","f1-score":"0.9870","info":"","state":"测试通过","time":"1.512s"},
-  {"id":"TS11","model":2022,"train":11,"test":6,"expectation":"-","precision":"0.9997","recall":"0.9745","f1-score":"0.9870","info":"","state":"测试通过","time":"1.512s"},
-  {"id":"TS12","model":2022,"train":12,"test":0,"expectation":"-","precision":"0.9997","recall":"0.9745","f1-score":"0.9870","info":"","state":"测试通过","time":"1.512s"},
-  {"id":"TS13","model":2022,"train":13,"test":1,"expectation":"-","precision":"0.9997","recall":"0.9745","f1-score":"0.9870","info":"","state":"测试通过","time":"1.512s"},
-  {"id":"TS14","model":2022,"train":6,"test":6,"expectation":"-","precision":"0.9997","recall":"0.9745","f1-score":"0.9870","info":"","state":"测试通过","time":"1.512s"},
-  {"id":"TS15","model":2022,"train":6,"test":6,"expectation":"-","precision":"0.9997","recall":"0.9745","f1-score":"0.9870","info":"","state":"测试通过","time":"1.512s"},
-  {"id":"TS16","model":2022,"train":6,"test":0,"expectation":"-","precision":"0.9997","recall":"0.9745","f1-score":"0.9870","info":"","state":"测试通过","time":"1.512s"},
-  {"id":"TS17","model":2022,"train":6,"test":1,"expectation":"-","precision":"0.9997","recall":"0.9745","f1-score":"0.9870","info":"","state":"测试通过","time":"1.512s"},
-  {"id":"TS18","model":2022,"train":6,"test":31,"expectation":"-","precision":"0.9997","recall":"0.9745","f1-score":"0.9870","info":"","state":"测试通过","time":"1.512s"},
-  {"id":"TS19","model":2022,"train":6,"test":32,"expectation":"-","precision":"0.9997","recall":"0.9745","f1-score":"0.9870","info":"","state":"测试通过","time":"1.512s"}
+  {"model":"PU","train_data":"r","data":"r-l"},
+  {"model":"PU","train_data":"r","data":"r-l"},
+  {"model":"PU","train_data":"r","data":"r-l"},
+  {"model":"PU","train_data":"r","data":"r-l"}
 ]

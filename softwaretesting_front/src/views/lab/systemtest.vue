@@ -68,12 +68,7 @@
         </el-table-column>
 
         <!-- ??? -->
-        <el-table-column label="预期输出" align="center">
-          <!-- <el-table-column
-          prop="actual"
-          label="实际输出"
-          align="center"
-        ></el-table-column> -->
+        <!-- <el-table-column label="预期输出" align="center">
           <el-table-column
             prop="precision"
             label="precision"
@@ -89,13 +84,8 @@
             label="f1-score"
             align="center"
           ></el-table-column>
-        </el-table-column>
+        </el-table-column> -->
          <el-table-column label="实际输出" align="center">
-          <!-- <el-table-column
-          prop="actual"
-          label="实际输出"
-          align="center"
-        ></el-table-column> -->
           <el-table-column
             prop="precision_real"
             label="precision"
@@ -107,7 +97,7 @@
             align="center"
           ></el-table-column>
           <el-table-column
-            prop="f1-score_real"
+            prop="f1score_real"
             label="f1-score"
             align="center"
           ></el-table-column>
@@ -140,16 +130,27 @@
 </template>
 
 <script>
-import mock_1_json from "@/mock/lab/lab_mock_1.json";
-import mock_2_json from "@/mock/lab/lab_mock_2.json";
+import mock_1_json from '@/mock/lab/lab_mock_1.json';
+import mock_2_json from '@/mock/lab/lab_mock_2.json';
+
 // import mock_3_json from "@/mock/lab/lab_mock_3.json";
-// import { testlab } from "@/api/labtest.js";
+import { testlab } from '@/api/labtest.js';
 export default {
   name: "SystemTest",
   components: {},
   props: ["parentHeight"],
   data() {
+      tableData = tableData.map((item, index) => {
+      return { id: fixedIds[index], ...item };
+    });
     return {
+      
+      id: [
+        "TS1",
+        "TS2",
+        "TS3",
+
+      ],
       options: [
         { value: "1", label: "健壮边界值分析" },
         { value: "2", label: "强健壮等价类测试" },
@@ -159,6 +160,8 @@ export default {
       tableData: [],
       loading: false,
       classState: [],
+      testTime: null,
+      
     };
   },
   computed: {
@@ -187,12 +190,10 @@ export default {
         for (let key in element) {
           newData[key] = element[key];
         }
-        newData["actual"] = "";
-        newData["info"] = "";
-        newData["state"] = null;
         this.tableData.push(newData);
       });
     },
+   
     tableRowClassName({ row, rowIndex }) {
       return this.classState[rowIndex];
     },
@@ -213,15 +214,21 @@ export default {
       }
       const _this = this;
       this.loading = true;
+      // 记录开始时间
+      const startTime = new Date();
       testlab(newData)
         .then((res) => {
+          console.log(res)
+                // 计算测试时间
+            const endTime = new Date();
+            this.testTime = (endTime - startTime) / 1000; // 转换为秒
           _this.tableData.forEach((item, index) => {
             let responseObject = res.data.test_result[index];
-            item.actual = responseObject.actual;
-            item.info = responseObject.info;
+             item.precision_real = responseObject.precision_real;
+            item.recall_real = responseObject.recall_real;
+            item.f1score_real = responseObject.f1score_real;
             item.state =
               responseObject.test_result == "测试通过" ? true : false;
-            item.time = responseObject.test_time;
             _this.classState[index] = item["state"]
               ? "success-row"
               : "error-row";

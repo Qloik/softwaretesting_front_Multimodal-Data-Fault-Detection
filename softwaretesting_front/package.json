@@ -8,12 +8,15 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "axios-mock-adapter": "^1.21.5",
     "core-js": "^3.6.5",
+    "cors": "^2.8.5",
     "default-passive-events": "^2.0.0",
     "element-ui": "^2.15.1",
     "file-saver": "^2.0.5",
     "mockjs": "^1.1.0",
     "vue": "^2.6.11",
+    "vue-axios": "^3.5.2",
     "vue-router": "^3.2.0",
     "vuex": "^3.4.0",
     "xlsx": "^0.17.0"

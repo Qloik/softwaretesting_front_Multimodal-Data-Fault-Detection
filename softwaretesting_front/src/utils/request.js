@@ -1,13 +1,98 @@
-//基于axios封装的请求模块
-import axios from 'axios'
 
+
+import axios from 'axios';
+import MockAdapter from 'axios-mock-adapter';
+
+const mock = new MockAdapter(axios);
+
+// 模拟数据
+const mockData = {
+  test_result: [
+    {
+      precision_real: 0.85,
+      recall_real: 0.9,
+      f1score_real: 0.87,
+      test_result: true,
+      test_time: 1.402
+    },
+    {
+        precision_real: 0.85,
+        recall_real: 0.9,
+        f1score_real: 0.87,
+        test_result: true,
+        test_time: 1.402
+      },
+      {
+        precision_real: 0.85,
+        recall_real: 0.9,
+        f1score_real: 0.87,
+        test_result: true,
+        test_time: 1.402
+      },
+      {
+        precision_real: 0.85,
+        recall_real: 0.9,
+        f1score_real: 0.87,
+        test_result: true,
+        test_time: 1.402
+      },
+      {
+        precision_real: 0.85,
+        recall_real: 0.9,
+        f1score_real: 0.87,
+        test_result: true,
+        test_time: 1.402
+      },
+
+       {
+      precision_real: 0.85,
+      recall_real: 0.9,
+      f1score_real: 0.87,
+      test_result: true,
+      test_time: 1.402
+    },
+  ]
+};
+
+// 拦截 /api/lab/test 请求，并返回模拟数据
+mock.onPost('/api/lab/test').reply(200, mockData);
+
+
+
+
+
+// 创建一个新的 axios 实例
 const request = axios.create({
 
-//    baseURL:'http://121.199.46.150:5000'
+    baseURL:'http://127.0.0.1:5000/'
+    
+  // baseURL: 'http://localhost:5000'
 
-    baseURL:'http://localhost:5000'
-})
+});
 
 
 
-export default request
+// 添加请求拦截器
+request.interceptors.request.use(config => {
+
+  return config;
+
+}, error => {
+
+  return Promise.reject(error);
+
+});
+
+
+
+// 添加响应拦截器
+request.interceptors.response.use(response => {
+
+  return response;
+
+}, error => {
+
+  return Promise.reject(error);
+});
+
+export default request;

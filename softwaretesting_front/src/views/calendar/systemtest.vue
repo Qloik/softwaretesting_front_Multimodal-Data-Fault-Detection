@@ -174,7 +174,7 @@ export default {
       }
       const _this = this;
       this.loading = true;
-      mock_1_json(newData)
+      testcalendar(newData)
         .then((res) => {
           _this.tableData.forEach((item, index) => {
             let responseObject = res.data.test_result[index];
