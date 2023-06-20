@@ -75,14 +75,14 @@
             label="recall"
             align="center"
           ><template slot-scope="scope">
-    <span>{{ formatPercentage(scope.row.precision_real) }}</span>
+    <span>{{ formatPercentage(scope.row.recall_real) }}</span>
   </template></el-table-column>
           <el-table-column
             prop="f1score_real"
             label="f1-score"
             align="center"
           ><template slot-scope="scope">
-    <span>{{ formatPercentage(scope.row.precision_real) }}</span>
+    <span>{{ formatPercentage(scope.row.f1score_real) }}</span>
   </template></el-table-column>
         </el-table-column>
         <!-- <el-table-column
