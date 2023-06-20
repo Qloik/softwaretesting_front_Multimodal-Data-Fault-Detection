@@ -1,7 +1,15 @@
 import request from "../utils/request"
+import request1 from "../utils/request"
 
 export const testlab = data => {
-  return request({
+  return request1({
+    method: 'POST',
+    url: '/process_mul',
+    data
+  })
+}
+export const testlabsingle = data => {
+  return request1({
     method: 'POST',
     url: '/process',
     data
@@ -9,7 +17,7 @@ export const testlab = data => {
 }
 
 export const uploadfile = data => {
-  return request({
+  return request1({
     method: 'POST',
     config: { 'Content-Type': 'multipart/form-data' },
     data,
