@@ -117,120 +117,791 @@ export default {
   props: ["parentHeight"],
   data() {
     return {
-      tableData: [
-     
-        {  model: "DTL",   train:  "r" ,     test: "r-s" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "DTL",    train:  "r" ,     test: "r-m" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "DTL",    train:  "r" ,     test: "r-l" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "DTL",    train:  "r" ,     test: "rt-s" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "DTL",    train:  "r" ,     test: "rt-m" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "DTL",    train:  "r" ,     test: "rt-l" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "DTL",    train:  "r" ,     test: "rtd-s" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "DTL",    train:  "r" ,     test: "rtd-m" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "DTL",    train:  "r" ,     test: "rtd-l" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "DTL",    train:  "rt",     test: "r-s" ,        precision_real:"",recall_real:"",f1score_real:"",time:"" },
-        {  model: "DTL",    train:  "rt",     test: "r-m" ,       precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "DTL",    train:  "rt",     test: "r-l" ,       precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "DTL",    train:  "rt",     test: "rt-s" ,      precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "DTL",    train:  "rt",     test: "rt-m" ,      precision_real:"",recall_real:"",f1score_real:"",time:"" },
-        {  model: "DTL",    train:  "rt",     test: "rt-l" ,      precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "DTL",    train:  "rt",     test: "rtd-s" ,     precision_real:"",recall_real:"",f1score_real:"",time:"" },
-        {  model: "DTL",    train:  "rt",     test: "rtd-m" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "DTL",    train:  "rt",     test: "rtd-l" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "DTL",    train:  "rtd",    test:  "r-s" ,      precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "DTL",    train:  "rtd",     test: "r-m" ,       precision_real:"",recall_real:"",f1score_real:"",time:"" },
-        {  model: "DTL",    train:  "rtd",     test: "r-l" ,      precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "DTL",    train:  "rtd",     test: "rt-s" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "DTL",    train:  "rtd",     test: "rt-m" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "DTL",    train:  "rtd",     test: "rt-l" ,     precision_real:"",recall_real:"",f1score_real:"",time:"" },
-        {  model: "DTL",    train:  "rtd",     test: "rtd-s" ,    precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "DTL",    train:  "rtd",     test: "rtd-m" ,    precision_real:"",recall_real:"",f1score_real:"",time:"" },
-        {  model: "DTL",    train:  "rtd",     test: "rtd-l" ,    precision_real:"",recall_real:"",f1score_real:"",time:""},
-
-         {  model:"CNN",   train:  "r" ,     test: "r-s" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {   model: "CNN",    train:  "r" ,     test: "r-m" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {   model: "CNN",    train:  "r" ,     test: "r-l" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {   model: "CNN",    train:  "r" ,     test: "rt-s" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "CNN",    train:  "r" ,     test: "rt-m" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "CNN",    train:  "r" ,     test: "rt-l" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "CNN",    train:  "r" ,     test: "rtd-s" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "CNN",    train:  "r" ,     test: "rtd-m" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "CNN",    train:  "r" ,     test: "rtd-l" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "CNN",    train:  "rt",     test: "r-s" ,        precision_real:"",recall_real:"",f1score_real:"",time:"" },
-        {  model: "CNN",    train:  "rt",     test: "r-m" ,       precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "CNN",    train:  "rt",     test: "r-l" ,       precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "CNN",    train:  "rt",     test: "rt-s" ,      precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "CNN",    train:  "rt",     test: "rt-m" ,      precision_real:"",recall_real:"",f1score_real:"",time:"" },
-        {  model: "CNN",    train:  "rt",     test: "rt-l" ,      precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "CNN",    train:  "rt",     test: "rtd-s" ,     precision_real:"",recall_real:"",f1score_real:"",time:"" },
-        {  model: "CNN",    train:  "rt",     test: "rtd-m" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "CNN",    train:  "rt",     test: "rtd-l" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "CNN",    train:  "rtd",    test:  "r-s" ,      precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "CNN",    train:  "rtd",     test: "r-m" ,       precision_real:"",recall_real:"",f1score_real:"",time:"" },
-        {  model: "CNN",    train:  "rtd",     test: "r-l" ,      precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "CNN",    train:  "rtd",     test: "rt-s" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "CNN",    train:  "rtd",     test: "rt-m" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "CNN",    train:  "rtd",     test: "rt-l" ,     precision_real:"",recall_real:"",f1score_real:"",time:"" },
-        {  model: "CNN",    train:  "rtd",     test: "rtd-s" ,    precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "CNN",    train:  "rtd",     test: "rtd-m" ,    precision_real:"",recall_real:"",f1score_real:"",time:"" },
-        {  model: "CNN",    train:  "rtd",     test: "rtd-l" ,    precision_real:"",recall_real:"",f1score_real:"",time:""},
-
-         { model: "Classify",   train:  "r" ,     test: "r-s" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {   model: "Classify",    train:  "r" ,     test: "r-m" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {   model: "Classify",    train:  "r" ,     test: "r-l" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {   model: "Classify",    train:  "r" ,     test: "rt-s" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {   model: "Classify",    train:  "r" ,     test: "rt-m" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {   model: "Classify",    train:  "r" ,     test: "rt-l" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {   model: "Classify",    train:  "r" ,     test: "rtd-s" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {   model: "Classify",    train:  "r" ,     test: "rtd-m" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {   model: "Classify",    train:  "r" ,     test: "rtd-l" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "Classify",    train:  "rt",     test: "r-s" ,        precision_real:"",recall_real:"",f1score_real:"",time:"" },
-        {  model: "Classify",    train:  "rt",     test: "r-m" ,       precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "Classify",    train:  "rt",     test: "r-l" ,       precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "Classify",    train:  "rt",     test: "rt-s" ,      precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "Classify",    train:  "rt",     test: "rt-m" ,      precision_real:"",recall_real:"",f1score_real:"",time:"" },
-        {  model: "Classify",    train:  "rt",     test: "rt-l" ,      precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "Classify",    train:  "rt",     test: "rtd-s" ,     precision_real:"",recall_real:"",f1score_real:"",time:"" },
-        {  model: "Classify",    train:  "rt",     test: "rtd-m" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "Classify",    train:  "rt",     test: "rtd-l" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "Classify",    train:  "rtd",    test:  "r-s" ,      precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "Classify",    train:  "rtd",     test: "r-m" ,       precision_real:"",recall_real:"",f1score_real:"",time:"" },
-        {  model: "Classify",    train:  "rtd",     test: "r-l" ,      precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "Classify",    train:  "rtd",     test: "rt-s" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "Classify",    train:  "rtd",     test: "rt-m" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "Classify",    train:  "rtd",     test: "rt-l" ,     precision_real:"",recall_real:"",f1score_real:"",time:"" },
-        {  model: "Classify",    train:  "rtd",     test: "rtd-s" ,    precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "Classify",    train:  "rtd",     test: "rtd-m" ,    precision_real:"",recall_real:"",f1score_real:"",time:"" },
-        {  model: "Classify",    train:  "rtd",     test: "rtd-l" ,    precision_real:"",recall_real:"",f1score_real:"",time:""},
-
-         {  model: "PU",   train:  "r" ,     test: "r-s" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "PU",    train:  "r" ,     test: "r-m" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "PU",    train:  "r" ,     test: "r-l" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "PU",    train:  "r" ,     test: "rt-s" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "PU",    train:  "r" ,     test: "rt-m" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "PU",    train:  "r" ,     test: "rt-l" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "PU",    train:  "r" ,     test: "rtd-s" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "PU",    train:  "r" ,     test: "rtd-m" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "PU",    train:  "r" ,     test: "rtd-l" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "PU",    train:  "rt",     test: "r-s" ,        precision_real:"",recall_real:"",f1score_real:"",time:"" },
-        {  model: "PU",    train:  "rt",     test: "r-m" ,       precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "PU",    train:  "rt",     test: "r-l" ,       precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "PU",    train:  "rt",     test: "rt-s" ,      precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "PU",    train:  "rt",     test: "rt-m" ,      precision_real:"",recall_real:"",f1score_real:"",time:"" },
-        {  model: "PU",    train:  "rt",     test: "rt-l" ,      precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "PU",    train:  "rt",     test: "rtd-s" ,     precision_real:"",recall_real:"",f1score_real:"",time:"" },
-        {  model: "PU",    train:  "rt",     test: "rtd-m" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "PU",    train:  "rt",     test: "rtd-l" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "PU",    train:  "rtd",    test:  "r-s" ,      precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "PU",    train:  "rtd",     test: "r-m" ,       precision_real:"",recall_real:"",f1score_real:"",time:"" },
-        {  model: "PU",    train:  "rtd",     test: "r-l" ,      precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "PU",    train:  "rtd",     test: "rt-s" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "PU",    train:  "rtd",     test: "rt-m" ,     precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "PU",    train:  "rtd",     test: "rt-l" ,     precision_real:"",recall_real:"",f1score_real:"",time:"" },
-        {  model: "PU",    train:  "rtd",     test: "rtd-s" ,    precision_real:"",recall_real:"",f1score_real:"",time:""},
-        {  model: "PU",    train:  "rtd",     test: "rtd-m" ,    precision_real:"",recall_real:"",f1score_real:"",time:"" },
-        {  model: "PU",    train:  "rtd",     test: "rtd-l" ,    precision_real:"",recall_real:"",f1score_real:"",time:""},
-      ],
+      tableData:[
+    {
+        "model": "DTL",
+        "train": "r",
+        "test": "r-s",
+        "precision_real": 9.76,
+        "recall_real": 100.0,
+        "f1score_real": 17.78,
+        "time": ""
+    },
+    {
+        "model": "DTL",
+        "train": "r",
+        "test": "r-m",
+        "precision_real": 95.0,
+        "recall_real": 79.17,
+        "f1score_real": 86.36,
+        "time": ""
+    },
+    {
+        "model": "DTL",
+        "train": "r",
+        "test": "r-l",
+        "precision_real": 96.55,
+        "recall_real": 100.0,
+        "f1score_real": 98.25,
+        "time": ""
+    },
+    {
+        "model": "DTL",
+        "train": "r",
+        "test": "rt-m",
+        "precision_real": 21.43,
+        "recall_real": 100.0,
+        "f1score_real": 35.29,
+        "time": ""
+    },
+    {
+        "model": "DTL",
+        "train": "r",
+        "test": "rt-l",
+        "precision_real": 93.94,
+        "recall_real": 100.0,
+        "f1score_real": 96.88,
+        "time": ""
+    },
+    {
+        "model": "DTL",
+        "train": "r",
+        "test": "rtd-m",
+        "precision_real": 27.06,
+        "recall_real": 100.0,
+        "f1score_real": 42.59,
+        "time": ""
+    },
+    {
+        "model": "DTL",
+        "train": "r",
+        "test": "rtd-l",
+        "precision_real": 83.51,
+        "recall_real": 100.0,
+        "f1score_real": 91.01,
+        "time": ""
+    },
+    {
+        "model": "DTL",
+        "train": "rt",
+        "test": "r-s",
+        "precision_real": 9.76,
+        "recall_real": 100.0,
+        "f1score_real": 17.78,
+        "time": ""
+    },
+    {
+        "model": "DTL",
+        "train": "rt",
+        "test": "r-m",
+        "precision_real": 28.24,
+        "recall_real": 100.0,
+        "f1score_real": 44.04,
+        "time": ""
+    },
+    {
+        "model": "DTL",
+        "train": "rt",
+        "test": "r-l",
+        "precision_real": 32.56,
+        "recall_real": 100.0,
+        "f1score_real": 49.12,
+        "time": ""
+    },
+    {
+        "model": "DTL",
+        "train": "rt",
+        "test": "rt-m",
+        "precision_real": 94.12,
+        "recall_real": 88.89,
+        "f1score_real": 91.43,
+        "time": ""
+    },
+    {
+        "model": "DTL",
+        "train": "rt",
+        "test": "rt-l",
+        "precision_real": 98.94,
+        "recall_real": 100.0,
+        "f1score_real": 99.47,
+        "time": ""
+    },
+    {
+        "model": "DTL",
+        "train": "rt",
+        "test": "rtd-m",
+        "precision_real": 27.71,
+        "recall_real": 100.0,
+        "f1score_real": 43.4,
+        "time": ""
+    },
+    {
+        "model": "DTL",
+        "train": "rt",
+        "test": "rtd-l",
+        "precision_real": 83.51,
+        "recall_real": 100.0,
+        "f1score_real": 91.01,
+        "time": ""
+    },
+    {
+        "model": "DTL",
+        "train": "rtd",
+        "test": "r-s",
+        "precision_real": 9.76,
+        "recall_real": 100.0,
+        "f1score_real": 17.78,
+        "time": ""
+    },
+    {
+        "model": "DTL",
+        "train": "rtd",
+        "test": "r-m",
+        "precision_real": 28.24,
+        "recall_real": 100.0,
+        "f1score_real": 44.04,
+        "time": ""
+    },
+    {
+        "model": "DTL",
+        "train": "rtd",
+        "test": "r-l",
+        "precision_real": 32.56,
+        "recall_real": 100.0,
+        "f1score_real": 49.12,
+        "time": ""
+    },
+    {
+        "model": "DTL",
+        "train": "rtd",
+        "test": "rt-m",
+        "precision_real": 22.22,
+        "recall_real": 100.0,
+        "f1score_real": 36.36,
+        "time": ""
+    },
+    {
+        "model": "DTL",
+        "train": "rtd",
+        "test": "rt-l",
+        "precision_real": 93.94,
+        "recall_real": 100.0,
+        "f1score_real": 96.88,
+        "time": ""
+    },
+    {
+        "model": "DTL",
+        "train": "rtd",
+        "test": "rtd-m",
+        "precision_real": 100.0,
+        "recall_real": 91.3,
+        "f1score_real": 95.45,
+        "time": ""
+    },
+    {
+        "model": "DTL",
+        "train": "rtd",
+        "test": "rtd-l",
+        "precision_real": 94.19,
+        "recall_real": 100.0,
+        "f1score_real": 97.01,
+        "time": ""
+    },
+    {
+        "model": "CNN",
+        "train": "r",
+        "test": "r-m",
+        "precision_real": 56.0,
+        "recall_real": 63.64,
+        "f1score_real": 59.57,
+        "time": ""
+    },
+    {
+        "model": "CNN",
+        "train": "r",
+        "test": "r-l",
+        "precision_real": 30.23,
+        "recall_real": 100.0,
+        "f1score_real": 46.43,
+        "time": ""
+    },
+    {
+        "model": "CNN",
+        "train": "r",
+        "test": "rt-m",
+        "precision_real": 35.0,
+        "recall_real": 41.18,
+        "f1score_real": 37.84,
+        "time": ""
+    },
+    {
+        "model": "CNN",
+        "train": "r",
+        "test": "rt-l",
+        "precision_real": 80.0,
+        "recall_real": 23.81,
+        "f1score_real": 36.7,
+        "time": ""
+    },
+    {
+        "model": "CNN",
+        "train": "r",
+        "test": "rtd-m",
+        "precision_real": 41.18,
+        "recall_real": 38.89,
+        "f1score_real": 40.0,
+        "time": ""
+    },
+    {
+        "model": "CNN",
+        "train": "r",
+        "test": "rtd-l",
+        "precision_real": 90.0,
+        "recall_real": 88.73,
+        "f1score_real": 89.36,
+        "time": ""
+    },
+    {
+        "model": "CNN",
+        "train": "rt",
+        "test": "r-m",
+        "precision_real": 43.33,
+        "recall_real": 59.09,
+        "f1score_real": 50.0,
+        "time": ""
+    },
+    {
+        "model": "CNN",
+        "train": "rt",
+        "test": "r-l",
+        "precision_real": 28.89,
+        "recall_real": 100.0,
+        "f1score_real": 44.83,
+        "time": ""
+    },
+    {
+        "model": "CNN",
+        "train": "rt",
+        "test": "rt-m",
+        "precision_real": 84.21,
+        "recall_real": 94.12,
+        "f1score_real": 88.89,
+        "time": ""
+    },
+    {
+        "model": "CNN",
+        "train": "rt",
+        "test": "rt-l",
+        "precision_real": 100.0,
+        "recall_real": 100.0,
+        "f1score_real": 100.0,
+        "time": ""
+    },
+    {
+        "model": "CNN",
+        "train": "rt",
+        "test": "rtd-m",
+        "precision_real": 30.56,
+        "recall_real": 61.11,
+        "f1score_real": 40.74,
+        "time": ""
+    },
+    {
+        "model": "CNN",
+        "train": "rt",
+        "test": "rtd-l",
+        "precision_real": 78.89,
+        "recall_real": 100.0,
+        "f1score_real": 88.2,
+        "time": ""
+    },
+    {
+        "model": "CNN",
+        "train": "rtd",
+        "test": "r-m",
+        "precision_real": 38.71,
+        "recall_real": 54.55,
+        "f1score_real": 45.28,
+        "time": ""
+    },
+    {
+        "model": "CNN",
+        "train": "rtd",
+        "test": "r-l",
+        "precision_real": 28.09,
+        "recall_real": 96.15,
+        "f1score_real": 43.48,
+        "time": ""
+    },
+    {
+        "model": "CNN",
+        "train": "rtd",
+        "test": "rt-m",
+        "precision_real": 36.84,
+        "recall_real": 82.35,
+        "f1score_real": 50.91,
+        "time": ""
+    },
+    {
+        "model": "CNN",
+        "train": "rtd",
+        "test": "rt-l",
+        "precision_real": 93.26,
+        "recall_real": 98.81,
+        "f1score_real": 95.95,
+        "time": ""
+    },
+    {
+        "model": "CNN",
+        "train": "rtd",
+        "test": "rtd-m",
+        "precision_real": 84.21,
+        "recall_real": 88.89,
+        "f1score_real": 86.49,
+        "time": ""
+    },
+    {
+        "model": "CNN",
+        "train": "rtd",
+        "test": "rtd-l",
+        "precision_real": 98.61,
+        "recall_real": 100.0,
+        "f1score_real": 99.3,
+        "time": ""
+    },
+    {
+        "model": "Classify",
+        "train": "r",
+        "test": "r-m",
+        "precision_real": 100.0,
+        "recall_real": 95.0,
+        "f1score_real": 97.0,
+        "time": ""
+    },
+    {
+        "model": "Classify",
+        "train": "r",
+        "test": "r-l",
+        "precision_real": 100.0,
+        "recall_real": 100.0,
+        "f1score_real": 100.0,
+        "time": ""
+    },
+    {
+        "model": "Classify",
+        "train": "r",
+        "test": "rt-s",
+        "precision_real": 100.0,
+        "recall_real": 100.0,
+        "f1score_real": 100.0,
+        "time": ""
+    },
+    {
+        "model": "Classify",
+        "train": "r",
+        "test": "rt-l",
+        "precision_real": 100.0,
+        "recall_real": 96.0,
+        "f1score_real": 98.0,
+        "time": ""
+    },
+    {
+        "model": "Classify",
+        "train": "r",
+        "test": "rtd-s",
+        "precision_real": 100.0,
+        "recall_real": 100.0,
+        "f1score_real": 100.0,
+        "time": ""
+    },
+    {
+        "model": "Classify",
+        "train": "r",
+        "test": "rtd-m",
+        "precision_real": 100.0,
+        "recall_real": 100.0,
+        "f1score_real": 100.0,
+        "time": ""
+    },
+    {
+        "model": "Classify",
+        "train": "r",
+        "test": "rtd-l",
+        "precision_real": 100.0,
+        "recall_real": 100.0,
+        "f1score_real": 100.0,
+        "time": ""
+    },
+    {
+        "model": "Classify",
+        "train": "rt",
+        "test": "r-m",
+        "precision_real": 92.0,
+        "recall_real": 82.0,
+        "f1score_real": 85.0,
+        "time": ""
+    },
+    {
+        "model": "Classify",
+        "train": "rt",
+        "test": "r-l",
+        "precision_real": 100.0,
+        "recall_real": 100.0,
+        "f1score_real": 100.0,
+        "time": ""
+    },
+    {
+        "model": "Classify",
+        "train": "rt",
+        "test": "rt-s",
+        "precision_real": 100.0,
+        "recall_real": 100.0,
+        "f1score_real": 100.0,
+        "time": ""
+    },
+    {
+        "model": "Classify",
+        "train": "rt",
+        "test": "rt-l",
+        "precision_real": 100.0,
+        "recall_real": 100.0,
+        "f1score_real": 100.0,
+        "time": ""
+    },
+    {
+        "model": "Classify",
+        "train": "rt",
+        "test": "rtd-s",
+        "precision_real": 100.0,
+        "recall_real": 100.0,
+        "f1score_real": 100.0,
+        "time": ""
+    },
+    {
+        "model": "Classify",
+        "train": "rt",
+        "test": "rtd-m",
+        "precision_real": 100.0,
+        "recall_real": 100.0,
+        "f1score_real": 100.0,
+        "time": ""
+    },
+    {
+        "model": "Classify",
+        "train": "rt",
+        "test": "rtd-l",
+        "precision_real": 100.0,
+        "recall_real": 100.0,
+        "f1score_real": 100.0,
+        "time": ""
+    },
+    {
+        "model": "Classify",
+        "train": "rtd",
+        "test": "r-m",
+        "precision_real": 97.0,
+        "recall_real": 95.0,
+        "f1score_real": 96.0,
+        "time": ""
+    },
+    {
+        "model": "Classify",
+        "train": "rtd",
+        "test": "r-l",
+        "precision_real": 100.0,
+        "recall_real": 100.0,
+        "f1score_real": 100.0,
+        "time": ""
+    },
+    {
+        "model": "Classify",
+        "train": "rtd",
+        "test": "rt-s",
+        "precision_real": 100.0,
+        "recall_real": 100.0,
+        "f1score_real": 100.0,
+        "time": ""
+    },
+    {
+        "model": "Classify",
+        "train": "rtd",
+        "test": "rt-l",
+        "precision_real": 100.0,
+        "recall_real": 94.0,
+        "f1score_real": 97.0,
+        "time": ""
+    },
+    {
+        "model": "Classify",
+        "train": "rtd",
+        "test": "rtd-s",
+        "precision_real": 100.0,
+        "recall_real": 100.0,
+        "f1score_real": 100.0,
+        "time": ""
+    },
+    {
+        "model": "Classify",
+        "train": "rtd",
+        "test": "rtd-m",
+        "precision_real": 100.0,
+        "recall_real": 100.0,
+        "f1score_real": 100.0,
+        "time": ""
+    },
+    {
+        "model": "Classify",
+        "train": "rtd",
+        "test": "rtd-l",
+        "precision_real": 100.0,
+        "recall_real": 100.0,
+        "f1score_real": 100.0,
+        "time": ""
+    },
+    {
+        "model": "PU",
+        "train": "r",
+        "test": "r-s",
+        "precision_real": 0.0,
+        "recall_real": 0.0,
+        "f1score_real": 0.0,
+        "time": ""
+    },
+    {
+        "model": "PU",
+        "train": "r",
+        "test": "r-m",
+        "precision_real": 100.0,
+        "recall_real": 77.27,
+        "f1score_real": 87.18,
+        "time": ""
+    },
+    {
+        "model": "PU",
+        "train": "r",
+        "test": "r-l",
+        "precision_real": 100.0,
+        "recall_real": 100.0,
+        "f1score_real": 100.0,
+        "time": ""
+    },
+    {
+        "model": "PU",
+        "train": "r",
+        "test": "rt-s",
+        "precision_real": 100.0,
+        "recall_real": 100.0,
+        "f1score_real": 100.0,
+        "time": ""
+    },
+    {
+        "model": "PU",
+        "train": "r",
+        "test": "rt-m",
+        "precision_real": 66.67,
+        "recall_real": 87.5,
+        "f1score_real": 75.68,
+        "time": ""
+    },
+    {
+        "model": "PU",
+        "train": "r",
+        "test": "rt-l",
+        "precision_real": 94.38,
+        "recall_real": 100.0,
+        "f1score_real": 97.11,
+        "time": ""
+    },
+    {
+        "model": "PU",
+        "train": "r",
+        "test": "rtd-s",
+        "precision_real": 100.0,
+        "recall_real": 100.0,
+        "f1score_real": 100.0,
+        "time": ""
+    },
+    {
+        "model": "PU",
+        "train": "r",
+        "test": "rtd-m",
+        "precision_real": 73.91,
+        "recall_real": 80.95,
+        "f1score_real": 77.27,
+        "time": ""
+    },
+    {
+        "model": "PU",
+        "train": "r",
+        "test": "rtd-l",
+        "precision_real": 96.05,
+        "recall_real": 100.0,
+        "f1score_real": 97.99,
+        "time": ""
+    },
+    {
+        "model": "PU",
+        "train": "rt",
+        "test": "r-s",
+        "precision_real": 0.0,
+        "recall_real": 0.0,
+        "f1score_real": 0.0,
+        "time": ""
+    },
+    {
+        "model": "PU",
+        "train": "rt",
+        "test": "r-m",
+        "precision_real": 100.0,
+        "recall_real": 81.82,
+        "f1score_real": 90.0,
+        "time": ""
+    },
+    {
+        "model": "PU",
+        "train": "rt",
+        "test": "r-l",
+        "precision_real": 100.0,
+        "recall_real": 100.0,
+        "f1score_real": 100.0,
+        "time": ""
+    },
+    {
+        "model": "PU",
+        "train": "rt",
+        "test": "rt-s",
+        "precision_real": 100.0,
+        "recall_real": 100.0,
+        "f1score_real": 100.0,
+        "time": ""
+    },
+    {
+        "model": "PU",
+        "train": "rt",
+        "test": "rt-m",
+        "precision_real": 100.0,
+        "recall_real": 87.5,
+        "f1score_real": 93.33,
+        "time": ""
+    },
+    {
+        "model": "PU",
+        "train": "rt",
+        "test": "rt-l",
+        "precision_real": 100.0,
+        "recall_real": 100.0,
+        "f1score_real": 100.0,
+        "time": ""
+    },
+    {
+        "model": "PU",
+        "train": "rt",
+        "test": "rtd-s",
+        "precision_real": 100.0,
+        "recall_real": 100.0,
+        "f1score_real": 100.0,
+        "time": ""
+    },
+    {
+        "model": "PU",
+        "train": "rt",
+        "test": "rtd-m",
+        "precision_real": 100.0,
+        "recall_real": 90.48,
+        "f1score_real": 95.0,
+        "time": ""
+    },
+    {
+        "model": "PU",
+        "train": "rt",
+        "test": "rtd-l",
+        "precision_real": 100.0,
+        "recall_real": 100.0,
+        "f1score_real": 100.0,
+        "time": ""
+    },
+    {
+        "model": "PU",
+        "train": "rtd",
+        "test": "r-s",
+        "precision_real": 0.0,
+        "recall_real": 0.0,
+        "f1score_real": 0.0,
+        "time": ""
+    },
+    {
+        "model": "PU",
+        "train": "rtd",
+        "test": "r-m",
+        "precision_real": 100.0,
+        "recall_real": 72.73,
+        "f1score_real": 84.21,
+        "time": ""
+    },
+    {
+        "model": "PU",
+        "train": "rtd",
+        "test": "r-l",
+        "precision_real": 100.0,
+        "recall_real": 100.0,
+        "f1score_real": 100.0,
+        "time": ""
+    },
+    {
+        "model": "PU",
+        "train": "rtd",
+        "test": "rt-s",
+        "precision_real": 100.0,
+        "recall_real": 100.0,
+        "f1score_real": 100.0,
+        "time": ""
+    },
+    {
+        "model": "PU",
+        "train": "rtd",
+        "test": "rt-m",
+        "precision_real": 71.43,
+        "recall_real": 93.75,
+        "f1score_real": 81.08,
+        "time": ""
+    },
+    {
+        "model": "PU",
+        "train": "rtd",
+        "test": "rt-l",
+        "precision_real": 95.45,
+        "recall_real": 100.0,
+        "f1score_real": 97.67,
+        "time": ""
+    },
+    {
+        "model": "PU",
+        "train": "rtd",
+        "test": "rtd-s",
+        "precision_real": 100.0,
+        "recall_real": 100.0,
+        "f1score_real": 100.0,
+        "time": ""
+    },
+    {
+        "model": "PU",
+        "train": "rtd",
+        "test": "rtd-m",
+        "precision_real": 100.0,
+        "recall_real": 95.24,
+        "f1score_real": 97.56,
+        "time": ""
+    },
+    {
+        "model": "PU",
+        "train": "rtd",
+        "test": "rtd-l",
+        "precision_real": 100.0,
+        "recall_real": 100.0,
+        "f1score_real": 100.0,
+        "time": ""
+    }
+],
       loading: false,
       classState: [],
       testTime: null,
@@ -293,8 +964,8 @@ export default {
           console.log(res);
           // 计算测试时间
           const endTime = new Date();
-           this.testTime = (endTime - startTime) / 1000; // 转换为秒
-           console.log("testtime",this.testTime);
+          this.testTime = (endTime - startTime) / 1000; // 转换为秒
+          console.log("testtime", this.testTime);
           _this.tableData.forEach((item, index) => {
             let responseObject = res.data.test_result[index];
             item.precision_real = responseObject.P;
