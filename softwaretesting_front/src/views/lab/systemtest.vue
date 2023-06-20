@@ -95,11 +95,11 @@
             </div>
           </template>
         </el-table-column> -->
-        <el-table-column
+        <!-- <el-table-column
           prop="time"
           label="测试时间"
           align="center"
-        ></el-table-column>
+        ></el-table-column> -->
       </el-table>
     </div>
   </div>
@@ -293,7 +293,8 @@ export default {
           console.log(res);
           // 计算测试时间
           const endTime = new Date();
-           this.tableData.time = (endTime - startTime) / 1000; // 转换为秒
+           this.testTime = (endTime - startTime) / 1000; // 转换为秒
+           console.log("testtime",this.testTime);
           _this.tableData.forEach((item, index) => {
             let responseObject = res.data.test_result[index];
             item.precision_real = responseObject.P;
@@ -317,7 +318,7 @@ export default {
         });
     },
     reset(value) {
-      this.initTableData(mock_1_json);
+      this.initTableData();
     },
   },
 };

@@ -40,7 +40,7 @@
         </div>
       </el-form-item>
 
-      <el-form-item >
+      <el-form-item>
         <div class="model-row">
           <span class="model-label">选择TEST的数据:</span>
           <!-- <el-input v-model="formLabelAlign.test"></el-input> -->
@@ -60,14 +60,19 @@
         </div>
       </el-form-item>
     </el-form>
-    <el-button
-      class="main-button"
-      type="success"
-      plain
-      @click="doTest"
-      :loading="loading"
-      >进行测试<i class="el-icon-upload el-icon--right"></i
-    ></el-button>
+    <div class="button-group">
+      <el-button
+        class="main-button"
+        type="success"
+        plain
+        @click="doTest"
+        :loading="loading"
+        >进行测试<i class="el-icon-upload el-icon--right"></i
+      ></el-button>
+      <el-button @click="reset(value)" class="reset-button" type="warning" plain
+        >重置</el-button
+      >
+    </div>
     <div>
       <!-- <span>实际输出：{{ actual }}</span>
       <el-divider direction="vertical"></el-divider>
@@ -75,7 +80,7 @@
       <el-divider direction="vertical"></el-divider>
        -->
 
-      <el-table class="table2" :data="resultData">
+      <el-table class="table2" :data="resultData" v-loading="loading">
         <el-table-column prop="P" label="P"></el-table-column>
         <el-table-column prop="R" label="R"></el-table-column>
         <el-table-column prop="F1" label="F1"></el-table-column>
@@ -95,18 +100,25 @@ export default {
 
   data() {
     return {
+      loading: false,
       actual: "",
       info: "",
       labelPosition: "right",
-      tableHeader: '输出结果', 
+      tableHeader: "输出结果",
       formLabelAlign: {
         model: ref("PU"),
-        train: ref(""),
-        test: ref(""),
+        train_data: ref(""),
+        data: ref(""),
       },
       date: "",
       loading: false,
-      resultData: [],
+      resultData: [
+        {
+          P: "",
+          R: "",
+          F1: "",
+        },
+      ],
       options1: [
         {
           value: "r",
@@ -162,10 +174,35 @@ export default {
     };
   },
   computed: {},
-  watch: {},
+  watch: {
+    value: {
+      handler(newVal) {
+        this.reset(newVal);
+      },
+      immediate: false,
+    },
+  },
   created() {},
-  mounted() {},
+  mounted() {
+    this.initTableData();
+  },
   methods: {
+    initTableData() {
+      const columnMapping = {
+        model: "model",
+        train_data: "train_data",
+        data: "data",
+      };
+      for (const oldColumn in columnMapping) {
+        this.formLabelAlign[oldColumn] = "";
+      }
+      this.formLabelAlign["model"] = "PU";
+      resultData["P"] = "";
+      resultData["R"] = "";
+      resultData["F1"] = "";
+
+      console.log(formLabelAlign);
+    },
     doTest() {
       const newData = {};
       const columnMapping = {
@@ -198,24 +235,37 @@ export default {
       testlabsingle(newData)
         .then((res) => {
           console.log(res);
-          this.resultData = [
-            {
-              P: res.data.P,
-              R: res.data.R,
-              F1: res.data.F1,
-            },
-          ];
+          if (res.data.P == "" || res.data.R == "" || res.data.F1 == "") {
+            this.resultData = [
+              {
+                P: "-",
+                R: "-",
+                F1: "-",
+              },
+            ];
+          } else {
+            this.resultData = [
+              {
+                P: res.data.P,
+                R: res.data.R,
+                F1: res.data.F1,
+              },
+            ];
+          }
 
           this.$message({
             message: "测试成功",
             type: "success",
           });
-          _this.loading = false;
+          this.loading = false;
         })
         .catch((err) => {
           _this.$message.error("Server Error");
-          _this.loading = false;
+          this.loading = false;
         });
+    },
+    reset(value) {
+      this.initTableData();
     },
   },
 };
@@ -237,7 +287,10 @@ export default {
   margin-top: 10px;
 }
 .main-button {
-  width: 100%;
+  margin-left: -150px;
+
+  width: 500px;
+  margin-top: 10px;
 }
 .box-card {
   padding: 0;
@@ -256,7 +309,7 @@ export default {
   justify-content: center;
   margin: 20px 0;
 }
-.table2{
+.table2 {
   margin-top: 50px;
 }
 .button-row {
@@ -271,15 +324,14 @@ export default {
   margin-right: 10px;
   margin-left: -100px;
 }
-.el-select{
-   display: flex;
+.el-select {
+  display: flex;
   align-items: center;
   margin-left: 50px;
-
 }
-.result{
- display: flex;
- margin-top: 50px;
+.result {
+  display: flex;
+  margin-top: 50px;
 }
 .el-radio-group {
   display: flex;
@@ -289,10 +341,10 @@ export default {
 .model-item .el-form-item__label {
   margin-right: 20px;
 }
-.select-train{
+.select-train {
   margin-left: 140px;
 }
-.select-test{
+.select-test {
   margin-left: 150px;
 }
 </style>
