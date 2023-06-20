@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> f7c03af9d96168743f04b57a2a41d62aae912cb1
 import {request1} from "../utils/request"
 
 export const testlab = data => {

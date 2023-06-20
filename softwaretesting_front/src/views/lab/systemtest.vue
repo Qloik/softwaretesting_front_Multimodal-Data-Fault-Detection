@@ -67,17 +67,23 @@
             prop="precision_real"
             label="precision"
             align="center"
-          ></el-table-column>
+          ><template slot-scope="scope">
+    <span>{{ formatPercentage(scope.row.precision_real) }}</span>
+  </template></el-table-column>
           <el-table-column
             prop="recall_real"
             label="recall"
             align="center"
-          ></el-table-column>
+          ><template slot-scope="scope">
+    <span>{{ formatPercentage(scope.row.precision_real) }}</span>
+  </template></el-table-column>
           <el-table-column
             prop="f1score_real"
             label="f1-score"
             align="center"
-          ></el-table-column>
+          ><template slot-scope="scope">
+    <span>{{ formatPercentage(scope.row.precision_real) }}</span>
+  </template></el-table-column>
         </el-table-column>
         <!-- <el-table-column
           prop="info"
@@ -925,6 +931,12 @@ export default {
     this.initTableData();
   },
   methods: {
+    formatPercentage(value) {
+    if (typeof value !== 'number') {
+      return '';
+    }
+    return value.toFixed(2) + '%';
+  },
     //初始化
     initTableData() {
       tableData["precision_real"] = "";
