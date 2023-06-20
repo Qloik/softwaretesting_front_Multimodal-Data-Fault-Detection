@@ -60,23 +60,21 @@ import axios from 'axios';
 
 
 // 实验后端
-const request = axios.create({
+export const request = axios.create({
 
-    // baseURL:'http://127.0.0.1:5000/'
+    baseURL:'http://localhost:5000/'
     
-  baseURL: 'http://localhost:5001'
+  // baseURL: 'http://localhost:5001'
 
 });
 
 // 项目后端
-const request1 = axios.create({
+export const request1 = axios.create({
 
-  // baseURL:'http://127.0.0.1:5001/'
+  baseURL:'http://localhost:5001/'
   
-baseURL: 'http://localhost:5000'
+// baseURL: 'http://localhost:5000'
 
 });
-
-
 
 export default request;

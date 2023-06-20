@@ -1,5 +1,4 @@
-
-import request1 from "../utils/request"
+import {request1} from "../utils/request"
 
 export const testlab = data => {
   return request1({
