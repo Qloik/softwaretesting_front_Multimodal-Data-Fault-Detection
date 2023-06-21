@@ -1,5 +1,8 @@
 <template>
   <div class="system-test">
+    <div class="title">
+     <h1 >多模态故障检测实验结果展示</h1>
+     </div>
     <div class="main-header">
       <div class="button-group">
         <el-button
@@ -75,14 +78,14 @@
             label="recall"
             align="center"
           ><template slot-scope="scope">
-    <span>{{ formatPercentage(scope.row.precision_real) }}</span>
+    <span>{{ formatPercentage(scope.row.recall_real) }}</span>
   </template></el-table-column>
           <el-table-column
             prop="f1score_real"
             label="f1-score"
             align="center"
           ><template slot-scope="scope">
-    <span>{{ formatPercentage(scope.row.precision_real) }}</span>
+    <span>{{ formatPercentage(scope.row.f1score_real) }}</span>
   </template></el-table-column>
         </el-table-column>
         <!-- <el-table-column
@@ -1014,6 +1017,12 @@ export default {
 /deep/ .el-table .success-row {
   background-color: #f7fff9;
 }
+.title{
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+}
+
 .main-button {
   width: 500px;
   margin-top: 10px;
