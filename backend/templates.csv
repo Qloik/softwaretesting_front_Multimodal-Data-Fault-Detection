@@ -1,0 +1,24 @@
+EventId,EventTemplate,Occurrences
+8a24e50f,"i.controller.InsidePaymentController -draw back payment, userId: <*>, money: <*>",340
+02f40995,cancel.async.AsyncTask -[Draw Back Money] Draw back money...,340
+ee5ac47d,cancel.async.AsyncTask -[Cancel Order Service] Delay Process，Wrong Cancel Process,340
+26fe1888,cancel.service.CancelServiceImpl -[Cancel Order] Order found G|H,340
+12e144e2,order.controller.OrderController -[Get Order By Id] Order Id: <*>,340
+14175422,cancel.service.CancelServiceImpl -[Get <*> <*>,680
+d9c84d50,cancel.controller.CancelController -[Cancel Ticket] <*> <*>,680
+6f76c865,o.s.web.servlet.DispatcherServlet -FrameworkServlet 'dispatcherServlet': initialization completed in <*> ms,1
+fcd860d8,o.s.web.servlet.DispatcherServlet -FrameworkServlet 'dispatcherServlet': initialization started,1
+f944e353,o.a.c.c.C.[Tomcat].[localhost].[/] -Initializing Spring FrameworkServlet 'dispatcherServlet',1
+22db3932,"other.service.OrderOtherServiceImpl -Stations name list is : Response(status=<*>, msg=Success,",1
+24144ef3,"f.m.controller.StationController -Query stations for name batch,StationIdNumbers: <*>",1
+59400349,other.service.OrderOtherServiceImpl -[Query Order][Step <*>] Get Orders Number of Account: <*>,1
+c99eb448,"other.service.OrderOtherServiceImpl -[Query Order] Orders don't fit the requirement, loginId: <*>",1
+b0ee197a,o.controller.OrderOtherController -[Query Orders] Query Orders for <*>,1
+ae247650,"n.service.NotificationServiceImpl -Failed to close server connection after message failures; nested exception is javax.mail.MessagingException: Can't send command to SMTP host; nested exception is: java.net.SocketException: Connection closed by remote host. Failed messages: com.sun.mail.smtp.SMTPSendFailedException: <*> MI:STC <*> <*> <*>,<*>,please see <*>",340
+7123c3c5,cancel.service.CancelServiceImpl -[Send Email],340
+bdee8b96,"user.controller.UserController -Get user by user id,UserId: <*>",340
+f6c5e5ab,cancel.service.CancelServiceImpl -[Draw Back Money] Success.,340
+7f358670,cancel.service.CancelServiceImpl -[Cancel Order] Success.,340
+c76d9596,order.service.OrderServiceImpl -Success.,340
+90cf8084,order.controller.OrderController -[Verify Login] Success,340
+9ee8df02,cancel.async.AsyncTask -[Change Order Status] Changing...,340

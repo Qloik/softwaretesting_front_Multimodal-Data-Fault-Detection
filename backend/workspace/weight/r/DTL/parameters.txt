@@ -1,0 +1,23 @@
+device: cuda:0
+output_dir: ./output/
+model_dir: ./output/anrr/
+model_path: ./output/anrr/best_model.pth
+data_dir: ./data/jsons/all-no-response-relationship.jsons
+edge_type: {'Sequence': 0, 'SynRequest': 1, 'SynResponse': 2, 'AsynRequest': 3, 'MongoDB': 4, 'Other': -1, 'Invalid': -2}
+train_ratio: 0.8
+valid_ratio: 0.15
+test_ratio: 0.19999999999999996
+hidden: 50
+num_layers: 3
+epochs: 60
+n_epochs_stop: 40
+warm_up_n_epochs: 1
+batch_size: 100
+on_memory: True
+num_workers: 2
+lr: 0.001
+adam_beta1: 0.9
+adam_beta2: 0.999
+adam_weight_decay: 0.001
+with_cuda: True
+cuda_devices: None
